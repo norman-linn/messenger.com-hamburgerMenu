@@ -6,15 +6,13 @@
 html,
 body {
   font-family: "Inter", sans-serif;
-  background-color: darkgray;
-  /* height: 1000px; */
+  background-color: #fff;
 }
 
 header {
   width: 100%;
   height: 100px;
   padding: 0px 30px;
-  background-color: #fff;
   position: sticky;
   top: 0;
 }
@@ -30,9 +28,15 @@ header {
   height: 40px;
 }
 
+.overlayMenu > ul {
+  width: 100%;
+  padding: 0;
+}
+
 .overlayMenu > ul > li {
-  padding: 0px 10px;
   display: inline-block;
+  padding: 0px 10px;
+  user-select: none;
   list-style: none;
 }
 
@@ -53,7 +57,11 @@ header {
 }
 
 /* 755px */
-@media only screen and (max-width: 755px) {
+@media only screen and (max-width: 770px) {
+  .navbar-container {
+    padding-right: 30px;
+  }
+
   .overlay {
     display: none;
   }
@@ -99,33 +107,27 @@ header {
   .overlayMenu {
     width: 100vw;
     height: 100vh;
-    background-color: #fff;
     position: absolute;
     left: 0px;
-    top: 0px;
+    top: 100px;
     opacity: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   .showOverlayMenu {
     opacity: 1;
   }
 
-  li {
-    list-style: none;
-    transition: transform 0.5s ease;
+  .overlayMenu > ul > li {
+    background-color: #fafafa;
+    display: block;
+    line-height: 1;
+    margin-top: 10px;
+    padding: 33px 0 33px 40px;
   }
 
   .menu {
-    font-size: 35px;
-    padding: 10px;
-    user-select: none;
-    cursor: pointer;
-  }
-
-  .moveLiTagsUp {
-    transform: translateY(-10px);
+    color: #7d7d7d;
+    font-size: 30px;
+    margin: 0;
   }
 }
